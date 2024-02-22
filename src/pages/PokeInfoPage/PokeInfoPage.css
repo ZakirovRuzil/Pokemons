@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+}
+  
+body {
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+}
+
+.header-info {
+    background-color: #002fff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+}
+
+.content-info {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
