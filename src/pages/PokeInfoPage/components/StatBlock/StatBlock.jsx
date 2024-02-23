@@ -1,3 +1,5 @@
+// StatBlock.js
+
 import './StatBlock.css'
 import React, { useEffect, useState } from 'react';
 
@@ -32,9 +34,7 @@ const StatBlock = (props) => {
                                     return (
                                         <button
                                             key={i}
-                                            className="type"
-                                            // style={{ backgroundColor: typeof backgroundColor === 'string' ? backgroundColor : '' }}
-                                        >
+                                            className={`type ${type.type.name.toLowerCase()}`}>
                                             {type.type.name}
                                         </button>
                                     );
@@ -44,10 +44,32 @@ const StatBlock = (props) => {
 
                         <div className="stat-card__general-content">
                             <div className="stats">
-                                <h4>HP: {data.stats[0].base_stat}</h4>
-                                <h4>Attack: {data.stats[1].base_stat}</h4>
-                                <h4>Defense: {data.stats[2].base_stat}</h4>
-                                <h4>Speed: {data.stats[5].base_stat}</h4>
+                                <div className="hot-bar">
+                                    <div className="stat-item">
+                                        <h4>HP: {data.stats[0].base_stat}</h4>
+                                        <div className="stat-bar hp">
+                                            <div className="stat-fill" style={{ width: `${(data.stats[0].base_stat / 200) * 100}%` }}></div>
+                                        </div>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h4>Attack: {data.stats[1].base_stat}</h4>
+                                        <div className="stat-bar attack">
+                                            <div className="stat-fill" style={{ width: `${(data.stats[1].base_stat / 200) * 100}%` }}></div>
+                                        </div>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h4>Defense: {data.stats[2].base_stat}</h4>
+                                        <div className="stat-bar defense">
+                                            <div className="stat-fill" style={{ width: `${(data.stats[2].base_stat / 200) * 100}%` }}></div>
+                                        </div>
+                                    </div>
+                                    <div className="stat-item">
+                                        <h4>Speed: {data.stats[5].base_stat}</h4>
+                                        <div className="stat-bar speed">
+                                            <div className="stat-fill" style={{ width: `${(data.stats[5].base_stat / 200) * 100}%` }}></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`} alt="" />
                         </div>
@@ -83,7 +105,7 @@ const StatBlock = (props) => {
                                 <h4>
                                 {data.weight ? (
                                     data.weight.toString().length === 1
-                                        ? `0.${data.weight} m`
+                                        ? `0.${data.weight} kg`
                                         : `${data.weight.toString().slice(0, -1)}.${data.weight.toString().slice(-1)} kg`
                                 ) : (
                                     'Unknown'

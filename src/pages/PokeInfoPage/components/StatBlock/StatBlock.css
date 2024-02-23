@@ -2,7 +2,7 @@
     border: solid;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin: 10px;
+    margin-bottom: 10px;
     
 }
 .stat-card_general {
@@ -48,7 +48,46 @@
 }
 
 .stats h4 {
-    margin: 20px;
+    margin: 20px 0 5px 0;
+}
+
+.hot-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item {
+    margin-bottom: 10px;
+}
+
+.stat-bar {
+    width: 170px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.hp .stat-fill {
+    background-color: #60d394;
+}
+
+.attack .stat-fill {
+    background-color: #f14b3d;
+}
+
+.defense .stat-fill {
+    background-color: #fdd85d;
+}
+
+.speed .stat-fill {
+    background-color: #ff844f;
 }
 
 .stat-card__general-content img {

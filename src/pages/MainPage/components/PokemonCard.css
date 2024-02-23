@@ -40,7 +40,7 @@ a {
 .name-number h2 {
     margin: 0;
     font-size: 22px;
-    color: #0e1afc;
+    color: #072ac8;
     font-weight: lighter;
 }
 
@@ -50,3 +50,22 @@ a {
     color: #000000;
     font-weight: lighter;
 }
+
+.bug { background-color: #42946C; }
+.dragon { background-color: #61C1B6; }
+.grass { background-color: #5ABE79; }
+.steel { background-color: #8FDFAB; }
+.dark { background-color: #444649; }
+.flying { background-color: #8E9BAB; }
+.normal { background-color: #B98EB7; }
+.ghost { background-color: #91589D; }
+.rock { background-color: #5D3515; }
+.ground { background-color: #815831; }
+.fighting { background-color: #B95821; }
+.fire { background-color: #DC3E2D; }
+.electric { background-color: #F5C242; }
+.poison { background-color: #6846F6; }
+.psychic { background-color: #C92AB1; }
+.fairy { background-color: #DC506A; }
+.water { background-color: #4960E6; }
+.ice { background-color: #A2DEED; }

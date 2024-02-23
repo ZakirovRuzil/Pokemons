@@ -11,7 +11,8 @@ body {
 }
 
 .header-info {
-    background-color: #002fff;
+    height: 70px;
+    background-color: #072ac8;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -22,4 +23,17 @@ body {
     justify-content: center;
     margin: 20px;
     flex-wrap: wrap;
+}
+
+.info-pokeball {
+    position: absolute;
+    width: 90px;
+    opacity: 70%;
+    right: 1%;
+    top: -3.5%;
+}
+
+.header-info img {
+    width: 40px;
+    transform: scaleX(-1);
 }

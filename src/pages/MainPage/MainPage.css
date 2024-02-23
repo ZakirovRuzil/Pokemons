@@ -14,7 +14,9 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 150px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .pokemon-card {
@@ -26,10 +28,16 @@ body {
 }
 
 .header {
-    background-color: #002fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #072ac8;
     color: #fff;
     padding: 20px;
     text-align: center;
+    height: 200px;
 }
 
 .header h1 {
@@ -77,3 +85,50 @@ body {
     border-radius: 20px;
 }
 
+.main-pokeball {
+    position: absolute;
+    width: 150px;
+    opacity: 70%;
+    right: -3%;
+    top: -19%;
+}
+
+.error-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.error-search h2 {
+    font-size: 40px;
+}
+
+.error-search p {
+    color: #686868;
+    font-size: 20px;
+    margin: 20px 30px;
+}
+
+.error-search img {
+    width: 400px;
+    align-self: center;
+}
+
+.load-more-button {
+    position: absolute;
+    bottom: -100px; /* Подстройте это значение в зависимости от вашего дизайна */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.load-more-button {
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 20px;
+}
