@@ -25,6 +25,7 @@ body {
     padding: 10px;
     margin: 15px;
     width: 250px; 
+    box-shadow: 0 4px 8px rgba(7, 42, 200, 0.3);
 }
 
 .header {

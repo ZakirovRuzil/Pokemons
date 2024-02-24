@@ -6,11 +6,13 @@ import React, { useEffect, useState } from 'react';
 const StatBlock = (props) => {
 
     const [data, setData] = useState([])
-    
+    const [abilities, setAbilities] = useState([]);
+
     async function getInfo(){
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
         const data = await response.json()
         setData(data)
+        setAbilities(data.abilities);
     }
 
     useEffect(() =>{
@@ -48,25 +50,25 @@ const StatBlock = (props) => {
                                     <div className="stat-item">
                                         <h4>HP: {data.stats[0].base_stat}</h4>
                                         <div className="stat-bar hp">
-                                            <div className="stat-fill" style={{ width: `${(data.stats[0].base_stat / 200) * 100}%` }}></div>
+                                            <div className="stat-fill" style={{ width: `${(data.stats[0].base_stat / 300) * 100}%` }}></div>
                                         </div>
                                     </div>
                                     <div className="stat-item">
                                         <h4>Attack: {data.stats[1].base_stat}</h4>
                                         <div className="stat-bar attack">
-                                            <div className="stat-fill" style={{ width: `${(data.stats[1].base_stat / 200) * 100}%` }}></div>
+                                            <div className="stat-fill" style={{ width: `${(data.stats[1].base_stat / 300) * 100}%` }}></div>
                                         </div>
                                     </div>
                                     <div className="stat-item">
                                         <h4>Defense: {data.stats[2].base_stat}</h4>
                                         <div className="stat-bar defense">
-                                            <div className="stat-fill" style={{ width: `${(data.stats[2].base_stat / 200) * 100}%` }}></div>
+                                            <div className="stat-fill" style={{ width: `${(data.stats[2].base_stat / 300) * 100}%` }}></div>
                                         </div>
                                     </div>
                                     <div className="stat-item">
                                         <h4>Speed: {data.stats[5].base_stat}</h4>
                                         <div className="stat-bar speed">
-                                            <div className="stat-fill" style={{ width: `${(data.stats[5].base_stat / 200) * 100}%` }}></div>
+                                            <div className="stat-fill" style={{ width: `${(data.stats[5].base_stat / 300) * 100}%` }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -116,8 +118,26 @@ const StatBlock = (props) => {
                     </div>
                 </div>
             </div>
+            <div className="stat-card">
+                <div className="stat-card__wrapper">
+                    <div className="stat-card__header">
+                        <h2>Abilities</h2>
+                    </div>
+                    <div className="stat-card__abilities-content">
+                        {abilities.map((ability, index) => (
+                            <div key={index} className="ability-box">
+                                <div className={`ability ${index === 0 ? 'yellow' : index === 1 ? 'orange' : 'red'}`}>
+                                    <div className="ability-circle">
+                                        {ability.ability.name.charAt(0).toUpperCase()}
+                                    </div>
+                                    <p>{ability.ability.name.charAt(0).toUpperCase() + ability.ability.name.slice(1)}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
-        
     );
 };
 
