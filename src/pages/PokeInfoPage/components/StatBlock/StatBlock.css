@@ -3,13 +3,7 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     margin-bottom: 20px;
-    width: 575px;
     box-shadow: 0 4px 8px rgba(7, 42, 200, 0.3);
-}
-
-.stat-card_general {
-    width: 575px; 
-    height: 415px;
 }
 
 .stat-card__wrapper {
@@ -28,7 +22,7 @@
 
 .number-name h2 {
     color: #072ac8;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .types-info {
@@ -39,7 +33,7 @@
 .stat-card__general-content {
     display: flex;
     justify-content: space-between;
-    margin-top: -5%;
+    margin-top: -3%;
 }
 
 .stats {
@@ -47,6 +41,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 30%;
 }
 
 .stats h4 {
@@ -63,7 +58,6 @@
 }
 
 .stat-bar {
-    width: 170px;
     height: 10px;
     background-color: #eee;
     border-radius: 5px;
@@ -93,8 +87,8 @@
 }
 
 .stat-card__general-content img {
-    width: 70%;
-    height: 70%;
+    width: 65%;
+    height: 65%;
     object-fit: cover;
 }
 
@@ -108,6 +102,11 @@
     margin-top: 20px;
 }
 
+.breeding-content {
+    width: 45%;
+    margin: 5px;
+}
+
 .breeding-content div {
     border: solid;
     border: 1px solid #ccc;
@@ -115,9 +114,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px;
     height: 45px;
-    width: 250px;
+    width: 100%;
     background-color: #eeeeee;
 }
 
@@ -175,4 +173,35 @@
 
 .stat-card__abilities-content p {
     margin: 10px 0 0 0 ;
+}
+
+@media screen and (max-width: 768px) {
+    .stat-card {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+
+    .stat-card__general-content img {
+        width: 70%; /* Уменьшаем размер изображения */
+        height: 70%;
+    }
+
+    .stat-card__wrapper {
+        margin: 1px;
+    }
+
+    .stat-item {
+        margin-bottom: 5px; /* Уменьшаем отступ между статами */
+    }
+
+    .breeding-content div {
+        width: 100%; /* Растягиваем блоки с высотой и весом на всю ширину */
+    }
+
+    .type {
+        height: 30px;
+        width: 90px;
+    }
 }
